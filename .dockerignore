@@ -16,3 +16,5 @@
 **/build
 **/dist
 **/node_modules
+
+!nginx.conf
