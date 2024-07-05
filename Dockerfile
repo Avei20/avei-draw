@@ -4,7 +4,15 @@ WORKDIR /opt/node_app
 
 FROM build as production_buildstage
 
+FROM build as production_buildstage
+
 COPY package.json yarn.lock ./
+COPY excalidraw-app/package.json ./excalidraw-app/
+COPY packages/excalidraw/package.json ./packages/excalidraw/
+
+RUN yarn --network-timeout 600000
+
+COPY . .
 COPY excalidraw-app/package.json ./excalidraw-app/
 COPY packages/excalidraw/package.json ./packages/excalidraw/
 
@@ -29,4 +37,4 @@ CMD sh -c "envsubst '\$PORT' < /etc/nginx/conf.d/configfile.template > /etc/ngin
 
 # HEALTHCHECK CMD wget -q -O /dev/null http://localhost || exit 1
 
-FROM build as development
+# FROM build as development

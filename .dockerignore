@@ -1,13 +1,8 @@
-*
-!.env.development
-!.env.production
-!.eslintrc.json
-!.npmrc
-!.prettierrc
 !excalidraw-app/
 !package.json
 !public/
-!packages/
+!src/
+!excalidraw-app/
 !tsconfig.json
 !yarn.lock
 
@@ -17,4 +12,7 @@
 **/dist
 **/node_modules
 
+!nginx.conf
+!index.html
+!vite.config.ts
 !nginx.conf
